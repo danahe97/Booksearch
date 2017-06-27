@@ -16,6 +16,8 @@ import com.codepath.android.booksearch.R;
 import com.codepath.android.booksearch.activities.BookDetailActivity;
 import com.codepath.android.booksearch.models.Book;
 
+import org.parceler.Parcels;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,6 +57,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
                 Toast.makeText(context, tvTitle.getText(), Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(context, BookDetailActivity.class);
+                i.putExtra("book", Parcels.wrap(book));
                 context.startActivity(i);
             }
         }
